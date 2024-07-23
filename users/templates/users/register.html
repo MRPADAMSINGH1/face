@@ -1,0 +1,106 @@
+{% extends 'baselogin.html' %}
+
+{% block title %} Registration {% endblock title %}
+
+{% block body %}
+<!doctype html>
+<html class="h-100" lang="en">
+
+  <head>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
+  <link rel="icon" type="static/image/png" sizes="32x32" href="static/img/favicon-32x32.png">
+  <link rel="icon" type="static/image/png" sizes="16x16" href="static/img/favicon-16x16.png">
+  <link rel="icon" type="static/image/png" sizes="96x96" href="static/img/favicon.png">
+  <meta name="author" content="Padam Singh">
+  <meta name="generator" content="Eleventy v2.0.0">
+  <meta name="HandheldFriendly" content="true">
+  <title>Registration</title>
+  <link rel="stylesheet" href="static/css/theme.min.css">
+  <style>
+    .card-body{
+      text-decoration: none;
+      
+    }
+  </style>
+
+
+  </head>
+
+  <body class="d-flex h-100 w-100 bg-black text-white" data-bs-spy="scroll" data-bs-target="#navScroll">
+    {% include 'messaging.html' %}
+
+    <div class="h-100 container-fluid">
+      <div class="h-100 row d-flex align-items-stretch">
+        
+          <div class="col-12 col-md-7 col-lg-6 col-xl-5 d-flex align-items-start flex-column px-vw-5 ">
+          
+            <header class="mb-auto py-vh-2 col-12">
+              <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="/">
+                <img src="static/img/FaceKey.png" alt="Logo" style="width: 40px; height: 40px;" class="img-fluid">
+                <span class="ms-md-1 mt-1 fw-bolder me-md-5">FaceKey</span>
+              </a>
+
+            </header>
+            <main class="mb-auto col-12">
+              <h2>Registration With FaceKey</h2>
+              
+<form class="row" method="POST">
+  {% csrf_token %}
+  <div class="col-12">
+    <div class="row mb-3">
+      <div class="col">
+        <label for="first_name" class="form-label">First Name</label>
+        <input name="first_name" type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="first_name" aria-describedby="emailHelp">
+      </div>
+      <div class="col">
+        <label for="last_name" class="form-label">Last Name</label>
+        <input name="last_name" type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="last_name" aria-describedby="emailHelp">
+      </div>
+    </div>
+    
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Username</label>
+    <input name="username" type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="username" aria-describedby="emailHelp">
+  </div>
+
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input name="email" type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+
+  
+  <div class="row mb-3">
+    <div class="col">
+      <label for="password" class="form-label">Password</label>
+      <input name="password1" type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="password" aria-describedby="emailHelp">
+    </div>
+    <div class="col">
+      <label for="password_confirm" class="form-label">Confirm Password</label>
+      <input type="password" name="password2" class="form-control form-control-lg bg-gray-800 border-dark" id="password_confirm">
+    </div>
+  </div>
+  
+
+  <div class="row">
+      <p>Already have an account? <a class="dropdown-item text-end" href="{% url 'login' %}"  style="color: #6c757d;">Signin</a></p>
+  </div>
+  
+  <button type="submit" class="btn btn-white btn-xl mb-4">Submit</button>
+</div>
+</form>
+
+            </main>
+          </div>
+          
+            <div class="col-12 col-md-5 col-lg-6 col-xl-7 gradient"></div>
+          
+        </div>
+
+      </div></body>
+    </html>
+    {% endblock body %}

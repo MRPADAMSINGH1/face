@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}
+Face Registration Detail
+{% endblock title %}
+{% block body %}
+
+<div class="container mt-5 text-white">
+    <h1>Face Registration Detail</h1>
+    <table class="table table-bordered text-white">
+        <tr>
+            <th>First Name</th>
+            <td>{{ face_registration.first_name }}</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>{{ face_registration.last_name }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ face_registration.email }}</td>
+        </tr>
+        <tr>
+            <th>Designation</th>
+            <td>{{ face_registration.designation }}</td>
+        </tr>
+        <tr>
+            <th>Mobile</th>
+            <td>{{ face_registration.mobile }}</td>
+        </tr>
+        <tr>
+            <th>Organization</th>
+            <td>{{ face_registration.organization }}</td>
+        </tr>
+        <tr>
+            <th>Division Unit</th>
+            <td>{{ face_registration.division_unit }}</td>
+        </tr>
+        <tr>
+            <th>Private Key</th>
+            <td>{{ face_registration.private_key }}</td>
+        </tr>
+        <tr>
+            <th>Face Data</th>
+            <td>{{ face_registration.face_data }}</td>
+        </tr>
+        <tr>
+            <th>Attendance ID</th>
+            <td>{{ face_registration.attendance_id }}</td>
+        </tr>
+        <tr>
+            <th>Aadhar ID</th>
+            <td>{{ face_registration.aadhar_id }}</td>
+        </tr>
+        <tr>
+            <th>User Picture</th>
+            <td>
+                {% if face_registration.user_picture %}
+                    <img src="{{ face_registration.user_picture.url }}" alt="User Picture" width="100">
+                {% else %}
+                    No picture uploaded
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td>{{ face_registration.location }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock body %}

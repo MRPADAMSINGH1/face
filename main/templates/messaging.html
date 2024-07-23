@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+WNc/ftXpZDZ0/lmCybrNYnEAVFfT+I0+9T3LZM2dXQk5jH" crossorigin="anonymous">
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="mt-3">
+        {% if messages %}
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                {% for message in messages %}
+                    Swal.fire({
+                        icon: '{{ message.tags }}', // success, error, info, warning
+                        title: '<span style="text-decoration: none;">{{ message|escapejs }}</span>',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                {% endfor %}
+            });
+        </script>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-C8HYbAWrBdKekS6JlOCfz3KRH/Z1pg4c1EBvJxJb9uqHjIX+kwAV/ei+MR0fNYMW" crossorigin="anonymous"></script>
+    <!-- SweetAlert2 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>

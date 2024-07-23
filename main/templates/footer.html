@@ -1,0 +1,34 @@
+{% if not user.is_authenticated %}
+<div class="bg-black">
+    <div class="container px-vw-5 py-vh-5">
+      <div class="row d-flex align-items-center">
+        <div
+          class="col-12 col-lg-5 text-center text-lg-end"
+          data-aos="zoom-in-right"
+        >
+          <span class="h5 text-secondary fw-lighter">Affordable Knowledge</span>
+          <h2 class="display-6">
+            Unlock Advanced Security: <br>Get updates in your inbox.
+          </h2>
+        </div>
+        <div
+          class="col-12 col-lg-7 bg-dark rounded-5 py-vh-5 text-center my-1"
+          data-aos="zoom-in-up"
+        >
+		<form action="{% url 'subscribe' %}" method="POST" class="row">
+			{% csrf_token %}
+			<div class="col-12">
+				<div class="mb-3">
+					<input required="" name="name" type="text" id="firstname" class="form-control form-control-lg bg-gray-800 border-dark" placeholder="Your Name">
+				</div>
+				<div class="mb-3">
+					<input required="" name="email" type="text" id="email" class="form-control form-control-lg bg-gray-800 border-dark" placeholder="Your Email Address">
+				</div>
+				<button type="submit" class="btn btn-white btn-xl mb-4">Subscribe</button>
+			</div>
+		</form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
